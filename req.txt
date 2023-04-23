@@ -1,0 +1,8 @@
+discord
+openai
+flask
+huggingface_hub
+python-dotenv
+transformers
+datasets
+google-cloud-aiplatform
