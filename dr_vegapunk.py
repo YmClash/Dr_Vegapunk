@@ -17,6 +17,21 @@ intents.message_content = True
 
 bot = discord.Client(intents=intents)
 
+async def demande_gpt(prompt):
+    response = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        message=[
+            {"role":"system", "content":"Je suis Dr Vegapunk"},
+            {"role": "user", "content":prompt}
+        ],
+        max_tokens=500,
+        temperature=0.78,
+        top_p=1.0,
+        frequency_penalty=0.0,
+        presence_penalty=0.6,
+    )
+    message = response.choices[0].message.content.strip()
+    return message
 
 
 
