@@ -58,11 +58,6 @@ Afro_quote_1 = [
     "Le courage n'est pas l'absence de peur, mais la capacité de la vaincre.",
     "La richesse ne se mesure pas à l'argent que l'on possède, mais à l'amour que l'on donne.",
     "On ne peut pas empêcher les oiseaux de voler au-dessus de nos têtes, mais on peut les empêcher d'y faire leur nid.",
-
-    ]
-
-
-Afro_quote_2 = [
     "La patience est la mère de toutes les vertus.",
     "Si tu veux aller vite, marche seul. Si tu veux aller loin, marchons ensemble.",
     "Le voyage d'un millier de kilomètres commence par un pas.",

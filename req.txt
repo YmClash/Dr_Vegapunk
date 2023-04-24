@@ -6,3 +6,4 @@ python-dotenv
 transformers
 datasets
 google-cloud-aiplatform
+spotipy
