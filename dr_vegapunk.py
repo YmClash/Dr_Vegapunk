@@ -81,7 +81,7 @@ async def on_message(message) :
         await dr_vegapunk_channel.send(content=response)
 
 
-bot.run(key, log_level=logging.DEBUG)
+bot.run(key, log_level=logging.INFO)
 
 # generator = pipeline('text-generation', model='gpt2-xl')
 # tokenizer = GPT2Tokenizer.from_pretrained('gpt2-xl')

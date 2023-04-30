@@ -13,7 +13,9 @@ auth_manager = SpotifyClientCredentials(client_id=SPOTIPY_CLIENT_ID,client_secre
 spoti = spotipy.Spotify(client_credentials_manager=auth_manager)
 
 
-uri = '6l3HvQ5sa6mXTsMTB19rO5'
+
+uri = '5PXa57bB4y0vrQqeZX7A2S'
+
 
 
 result = spoti.artist_albums(uri, album_type='album')
