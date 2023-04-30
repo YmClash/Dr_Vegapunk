@@ -13,5 +13,3 @@ if __name__ == '__main__':
     dr_vegapunk.bot.run()
 
 
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/

@@ -52,7 +52,7 @@ async def demande_image(prompt):
 
 @bot.event
 async def on_ready() :
-    print(f'We have logged in #momo-jam-cava as : {bot.user} , SUPER!!!!!!!!!!!!!!!!!')
+    print(f'We have logged in #momo-jam-cava as : {bot.user} , SUPER!!!!!!!!!!!!!!!!!     dev by Y_mC ')
 
 
 @bot.event
