@@ -1,7 +1,14 @@
+15/05/2023
+add LLM  feature Langchain to  build the   model   
+add shaka.py 
+
 01/05/2023
 
-deploy on google cloub
+add Tag   before deploy on google cloud 
+Log level  set by DEBUG
 
+30/04/2023
+add spotify feature 
 
 
 26/04/2023
