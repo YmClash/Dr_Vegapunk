@@ -5,6 +5,11 @@ import quotes
 import random
 import logging
 from dotenv import load_dotenv
+from langchain.llms import OpenAI
+from langchain.llms import OpenAI
+from langchain.agents import load_tools,initialize_agent,AgentType
+from langchain.tools import Tool
+from langchain.utilities import GoogleSearchAPIWrapper
 
 load_dotenv()
 

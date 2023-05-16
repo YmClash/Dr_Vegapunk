@@ -8,3 +8,8 @@ datasets
 google-cloud-aiplatform
 spotipy
 torch
+diffusers
+langchain
+arxiv
+google-api-python-client
+google-search-results
