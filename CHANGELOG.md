@@ -1,3 +1,7 @@
+18/05/2023
+add spotify feature . now we can  ask a  agent  to play  a  song
+on spotify 
+
 15/05/2023
 add LLM  feature Langchain to  build the   model   
 add shaka.py 
