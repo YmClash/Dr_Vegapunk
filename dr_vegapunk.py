@@ -6,7 +6,6 @@ import random
 import logging
 from dotenv import load_dotenv
 from langchain.llms import OpenAI
-from langchain.llms import OpenAI
 from langchain.agents import load_tools,initialize_agent,AgentType
 from langchain.tools import Tool
 from langchain.utilities import GoogleSearchAPIWrapper
@@ -20,6 +19,13 @@ intents = discord.Intents.default()
 intents.message_content = True
 
 bot = discord.Client(intents=intents)
+
+
+lili = OpenAI(temperature=0.9)
+
+tool = ""
+
+
 
 
 # on va configure l'Api  de  OpenAi   enfin  d'avoir  acce au  Model de ChatGPT  et aussi a Dall-e
@@ -86,7 +92,7 @@ async def on_message(message) :
         await dr_vegapunk_channel.send(content=response)
 
 
-bot.run(key, log_level=logging.DEBUG)
+bot.run(key, log_level=logging.INFO)
 
 # generator = pipeline('text-generation', model='gpt2-xl')
 # tokenizer = GPT2Tokenizer.from_pretrained('gpt2-xl')

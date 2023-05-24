@@ -43,7 +43,7 @@ recherche = load_tools(["serpapi","llm-math"],llm=lili)
 # for i in resultat:
 #     print(i)
 
-agent_chain = initialize_agent(recherche,lili,agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION,verbose=True,)
+agent_chain = initialize_agent(tools,lili,agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION,verbose=True,)
 
 while True:
     agent_chain.run(input('YMC:'))
