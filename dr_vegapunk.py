@@ -49,6 +49,8 @@ async def demande_gpt(prompt) :
     message = response.choices[0].message.content.strip()
     return message
 
+
+
 #Model Dalle
 
 async def demande_image(prompt):
@@ -86,7 +88,7 @@ async def on_message(message) :
         await dr_vegapunk_channel.send(content=response)
 
 
-    if message.content.startswith("!imagemoi"):
+    if message.content.startswith("!img"):
         prompt = message.content[11 :]
         response = await demande_image(prompt)
         await dr_vegapunk_channel.send(content=response)

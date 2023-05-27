@@ -6,7 +6,7 @@ def greet(nom:str):
 
 def salutation(nom:str):
     return (f'Salut {nom}')
-
+fr
 def sepia(input_img):
     sepia_filter = np.array([
         [0.393, 0.769, 0.189],
@@ -19,11 +19,16 @@ def sepia(input_img):
 
 
 
-
-
-
-
 demo = gradio.Interface(fn=salutation,inputs="text",outputs="text")
 
+demo_2 = gradio.Interface(sepia,gradio.Image(shape=(200,200)),"image")
 
-demo.launch()
+with gradio.Blocks() as momo:
+    name = gradio.Textbox(label="Name")
+    output = gradio.Textbox(label="Output Box")
+    greet_btn = gradio.Button("Greet")
+    greet_btn.click(fn=salutation,inputs=name,outputs=output,api_name="Halllo ")
+
+
+run =
+momo.launch()
