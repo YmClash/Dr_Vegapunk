@@ -12,18 +12,48 @@ from langchain.utilities import GoogleSearchAPIWrapper
 
 load_dotenv()
 
+
+
+
+
 key = os.getenv('DR_VEGAPUNK_API_KEY')
 openai.api_key= os.getenv('OPENAI_API_KEY')
+GOOGLE_CSE_ID = os.getenv('GOOGLE_CSE_ID')
+GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY')
+
+
+
+#on  reunisalise  tout   les  module
+
 
 intents = discord.Intents.default()
 intents.message_content = True
 
 bot = discord.Client(intents=intents)
 
+search = GoogleSearchAPIWrapper()
 
 lili = OpenAI(temperature=0.9)
 
-tool = ""
+tool = load_tools(["arxiv"])
+
+tools = [Tool.from_function(
+    func=search.run,
+    name="Search",
+    description= "usefu  for answer  about current events"
+),
+]
+
+agent_chain = initialize_agent(tools,
+                               lili,
+                               agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
+                               verbose=True)
+
+
+
+async def demande_longchain(prompt):
+    agent_chain.run(prompt)
+
 
 
 
@@ -91,6 +121,11 @@ async def on_message(message) :
     if message.content.startswith("!img"):
         prompt = message.content[11 :]
         response = await demande_image(prompt)
+        await dr_vegapunk_channel.send(content=response)
+
+    if message.content.startswith("!archiv"):
+        prompt = message.content[11 :]
+        response = await demande_longchain(prompt)
         await dr_vegapunk_channel.send(content=response)
 
 

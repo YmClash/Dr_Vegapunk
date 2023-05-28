@@ -6,7 +6,7 @@ def greet(nom:str):
 
 def salutation(nom:str):
     return (f'Salut {nom}')
-fr
+
 def sepia(input_img):
     sepia_filter = np.array([
         [0.393, 0.769, 0.189],
@@ -30,5 +30,5 @@ with gradio.Blocks() as momo:
     greet_btn.click(fn=salutation,inputs=name,outputs=output,api_name="Halllo ")
 
 
-run =
+
 momo.launch()
