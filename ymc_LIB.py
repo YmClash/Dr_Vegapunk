@@ -27,6 +27,7 @@ def compare_list(list:list,list2:list):
         print("pas d'element en commun ")
 
 
+
 # generateur de Nom et prenom
 def generateur_nom(nombre:int):
 
