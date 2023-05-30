@@ -1,6 +1,7 @@
 import requests
 import socket
 import torch
+import random
 
 
 #affiche l'adresse IP
@@ -26,6 +27,29 @@ def compare_list(list:list,list2:list):
         print("pas d'element en commun ")
 
 
+# generateur de Nom et prenom
+def generateur_nom(nombre:int):
+
+    noms_fictif = []
+    liste_noms = ["Smith", "Johnson", "Williams", "Jones", "Brown", "Davis", "Miller",
+                  "Wilson", "Moore", "Taylor", "Anderson", "Thomas", "Jackson", "White",
+                  "Harris", "Martin", "Thompson", "Garcia", "Martinez", "Robinson","Toure"]
+
+    liste_prenoms = ["Emma", "Liam", "Olivia", "Noah", "Ava", "Isabella", "Sophia", "Mia",
+                     "Charlotte", "Amelia", "Harper", "Evelyn", "Abigail", "Emily", "Elizabeth",
+                     "Mila", "Ella", "Avery", "Sofia", "Camila","Mohamed Ali"]
+
+
+    for _ in range(nombre):
+        nom = random.choice(liste_noms)
+        prenom = ''.join(random.choices(liste_prenoms))
+        noms_fictif.append(f"{prenom} {nom}")
+
+    print(noms_fictif)
+
+
+
+
 
 #fonction pour connaitre  la taille  de  la  sortie  OUTSIZE dans un reseau de neurone
 def output_size(input,kernel_size):
@@ -41,6 +65,12 @@ def output_size(input,kernel_size):
 
 
 output_size(28,3)
+
+
+
+
+
+
 
 # resultat = set(Afro_quote_1) & set(Afro_quote_2)
 #
