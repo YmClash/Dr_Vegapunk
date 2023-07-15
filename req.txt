@@ -13,3 +13,4 @@ langchain
 arxiv
 google-api-python-client
 google-search-results
+py-substrate-api
