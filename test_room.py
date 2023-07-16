@@ -1,5 +1,7 @@
-import transformers
-import huggingface_hub
+from substrateinterface import SubstrateInterface
 
-print(f'transformer :{transformers.__version__}')
-print(f'huggingface : {huggingface_hub.__version__}')
+ws_provider = SubstrateInterface(url="wss://rpc-parachain.bajun.network")
+
+constant_list = ws_provider.get_metadata_constants(block_hash=None)
+
+print(constant_list)
