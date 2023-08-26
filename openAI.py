@@ -24,6 +24,6 @@ while True :
         frequency_penalty=0.0,
         presence_penalty=0.6
     )
-
+UM
     message = response.choices[0].message.content.strip()
     print(message)

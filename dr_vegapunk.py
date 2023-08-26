@@ -9,8 +9,8 @@ from langchain.llms import OpenAI
 from langchain.agents import load_tools, initialize_agent, AgentType
 from langchain.tools import Tool
 from langchain.utilities import GoogleSearchAPIWrapper
-from substrateinterface import SubstrateInterface
 from decimal import Decimal,getcontext
+# from substrateinterface import SubstrateInterface
 load_dotenv()
 #
 # rpc_point = SubstrateInterface(url="wss://rpc-parachain.baju.network")
@@ -48,7 +48,7 @@ agent_chain = initialize_agent(tools,
 
 
 async def demande_balance(adresse):
-    rpc_point = SubstrateInterface(url="wss://rpc-parachain.baju.network")
+    # rpc_point = SubstrateInterface(url="wss://rpc-parachain.baju.network")
     getcontext().prec = 15
     result = rpc_point.query('System','Account',[adresse])
     balance = Decimal(result.value['data']['free']) / Decimal(10**12)
@@ -128,14 +128,14 @@ async def on_message(message) :
         response = await demande_longchain(prompt)
         await dr_vegapunk_channel.send(content=response)
 
-    if message.content.startswith('!bajun'):
+    if message.content.startswith('!baj'):
         adresse = message.content[11 :]
         response = await demande_balance(adresse)
         await dr_vegapunk_channel.send(content=response)
 
 
 
-bot.run(key, log_level=logging.INFO)
+bot.run(key, log_level=logging.DEBUG)
 
 # generator = pipeline('text-generation', model='gpt2-xl')
 # tokenizer = GPT2Tokenizer.from_pretrained('gpt2-xl')

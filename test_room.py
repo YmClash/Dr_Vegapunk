@@ -1,7 +1,7 @@
 from substrateinterface import SubstrateInterface
 
-ws_provider = SubstrateInterface(url="wss://rpc-parachain.bajun.network")
 
-constant_list = ws_provider.get_metadata_constants(block_hash=None)
+from websocket import create_connection
 
-print(constant_list)
+
+substrate = SubstrateInterface(url="wss://rpc-parachain.baju.network")

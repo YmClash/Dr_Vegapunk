@@ -8,23 +8,25 @@ import random
 def ip_adresse():
     hostname = socket.gethostname()
     ip_adresse = socket.gethostbyname(hostname)
-    print(f'votre ip adresse es {ip_adresse}')
+    return f'votre ip adresse es {ip_adresse}'
 
 
 #liste tou les  methode d'un pacquet
 def method_list(*args):
     for method in dir(*args):
         if '__' not in method:
-            print(method)
-
+            # print(method)
+            return method
 
 
 def compare_list(list:list,list2:list):
     resultat = set(list) & set(list2)
     if len(resultat) > 0:
-        print(f'IL ya {len(resultat)} element en commun: {resultat}')
+        # print(f'IL ya {len(resultat)} element en commun: {resultat}')
+        return f'IL ya {len(resultat)} element en commun: {resultat}'
     if len(resultat) == 0:
         print("pas d'element en commun ")
+        return "pas d'element en commun "
 
 
 
@@ -46,8 +48,8 @@ def generateur_nom(nombre:int):
         prenom = ''.join(random.choices(liste_prenoms))
         noms_fictif.append(f"{prenom} {nom}")
 
-    print(noms_fictif)
-
+    # print(noms_fictif)
+    return (noms_fictif)
 
 
 
@@ -62,7 +64,8 @@ def output_size(input,kernel_size):
     output_size = get_output_size
     output_size = get_output_size
     output_size = get_output_size
-    print(f'Output size afer conv Layers: {output_size}')
+    # print(f'Output size afer conv Layers: {output_size}')
+    return f'Output size afer conv Layers: {output_size}'
 
 
 output_size(28,3)
