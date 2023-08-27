@@ -1,6 +1,6 @@
-import discord
-import quotes
-import openai
+# import discord
+# import quotes
+# import openai
 import os
 import dr_vegapunk
 from dotenv import load_dotenv
